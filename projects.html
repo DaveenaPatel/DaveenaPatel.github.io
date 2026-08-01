@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Daveena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .page-hero { padding: 70px 0 50px; border-bottom: 1px solid var(--border); }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500; color: var(--gray);
+      text-decoration: none; margin-bottom: 28px;
+      transition: color .18s;
+    }
+    .back-link:hover { color: var(--pink); }
+    .page-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; color: var(--dark); letter-spacing: -.02em; margin-bottom: 10px; }
+    .page-hero p { font-size: 16px; color: var(--gray); max-width: 500px; }
+
+    .all-projects { padding: 60px 0 100px; }
+    .all-projects .projects-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Expanded card — more detail */
+    .project-card-full {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex; flex-direction: column;
+      transition: box-shadow .2s, transform .2s, border-color .2s;
+    }
+    .project-card-full:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(214,0,110,.07);
+      border-color: #f0c0dc;
+    }
+    .project-card-full .project-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+    .project-card-full h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .project-card-full .project-desc { font-size: 14px; color: var(--gray); line-height: 1.75; margin-bottom: 20px; }
+
+    .contributions-section { margin-bottom: 20px; }
+    .contributions-section h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gray-light); margin-bottom: 10px; font-family: var(--mono); }
+    .contrib-list { display: flex; flex-direction: column; gap: 8px; }
+    .contrib-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--gray); }
+    .contrib-item::before { content: '→'; color: var(--pink); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    .project-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .all-projects .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    Daveena
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" data-en="Home" data-fr="Accueil">Home</a></li>
+    <li><a href="index.html#about" data-en="About" data-fr="À propos">About</a></li>
+    <li><a href="index.html#projects" data-en="Projects" data-fr="Projets">Projects</a></li>
+    <li><a href="index.html#skills" data-en="Skills" data-fr="Compétences">Skills</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <span class="lang-divider">|</span>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+      <span data-en="Back to Home" data-fr="Retour à l'accueil">Back to Home</span>
+    </a>
+    <div class="section-label" data-en="Projects" data-fr="Projets">Projects</div>
+    <h1 data-en="Things I've Built" data-fr="Ce que j'ai créé">Things I've Built</h1>
+    <p data-en="A collection of projects I've contributed to — from web platforms to mobile apps." data-fr="Une collection de projets auxquels j'ai contribué — des plateformes web aux applications mobiles.">A collection of projects I've contributed to — from web platforms to mobile apps.</p>
+  </div>
+</div>
+
+<!-- ALL PROJECTS -->
+<div class="all-projects">
+  <div class="container">
+    <div class="projects-grid">
+
+      <!-- TRAVENTA -->
+      <div class="project-card-full fade-in">
+        <div class="project-top">
+          <div class="project-icon pink">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/shayneuzan/Ecommerce-Project" target="_blank" class="icon-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <h3>Traventa</h3>
+        <p class="project-desc" data-en="A full-featured vacation package booking platform where users can browse curated travel deals, save favourites, and complete purchases. The platform also features an AI-powered chatbot to guide users through finding the right package for their needs." data-fr="Une plateforme complète de réservation de forfaits vacances où les utilisateurs peuvent parcourir des offres de voyage, sauvegarder leurs favoris et finaliser leurs achats. La plateforme intègre également un chatbot IA pour guider les utilisateurs.">A full-featured vacation package booking platform where users can browse curated travel deals, save favourites, and complete purchases. The platform also features an AI-powered chatbot to guide users through finding the right package for their needs.</p>
+
+        <div class="contributions-section">
+          <h4 data-en="My Contributions" data-fr="Mes contributions">My Contributions</h4>
+          <div class="contrib-list">
+            <div class="contrib-item" data-en="Built the end-to-end checkout flow including cart management, order summary, and payment confirmation pages." data-fr="J'ai conçu le flux de paiement de bout en bout, y compris la gestion du panier, le récapitulatif de la commande et les pages de confirmation de paiement."></div>
+            <div class="contrib-item" data-en="Implemented the favourites system allowing users to like, save and revisit vacation packages across sessions." data-fr="Mise en place d'un système de favoris permettant aux utilisateurs d'aimer, d'enregistrer et de consulter à nouveau leurs forfaits vacances lors de différentes sessions."></div>
+            <div class="contrib-item" data-en="Developed the AI chatbot to help users get answer to their questions." data-fr="J'ai développé un chatbot IA pour aider les utilisateurs à obtenir des réponses à leurs questions."></div>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <div class="tech-tags">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+          </div>
+          <div class="project-contributions" style="margin-bottom:0">
+            <span class="contrib-tag" data-en="Checkout" data-fr="Paiement">Checkout</span>
+            <span class="contrib-tag" data-en="Favourites" data-fr="Favoris">Favourites</span>
+            <span class="contrib-tag" data-en="AI Chatbot" data-fr="Chatbot IA">AI Chatbot</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB WALLET -->
+      <div class="project-card-full fade-in">
+        <div class="project-top">
+          <div class="project-icon blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/DaveenaPatel/SubscriptionManager" target="_blank" class="icon-link" title="GitHub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <h3>Sub Wallet</h3>
+        <p class="project-desc" data-en="A mobile subscription manager that helps users track all their recurring payments in one place. Users can set budgets, get billing reminders, and get a clear picture of their monthly spending across all their subscriptions." data-fr="Un gestionnaire d'abonnements mobile qui aide les utilisateurs à suivre tous leurs paiements récurrents en un seul endroit. Les utilisateurs peuvent définir des budgets, recevoir des rappels de facturation et avoir une vue claire de leurs dépenses mensuelles.">A mobile subscription manager that helps users track all their recurring payments in one place. Users can set budgets, get billing reminders, and get a clear picture of their monthly spending across all their subscriptions.</p>
+
+        <div class="contributions-section">
+          <h4 data-en="My Contributions" data-fr="Mes contributions">My Contributions</h4>
+          <div class="contrib-list">
+            <div class="contrib-item" data-en="Designed and built the categories system to let users group and filter subscriptions by type (entertainment, utilities, productivity, etc.)." data-fr="Conçu et développé le système de catégories permettant aux utilisateurs de regrouper et filtrer les abonnements par type (divertissement, services publics, productivité, etc.).">Designed and built the categories system to let users group and filter subscriptions by type (entertainment, utilities, productivity, etc.).</div>
+            <div class="contrib-item" data-en="Developed the full settings panel including currency selection, and account management." data-fr="Développé le panneau de paramètres complet incluant les préférences de notification, la sélection de devise et la gestion du compte.">Developed the full settings panel including notification preferences, currency selection, and account management.</div>
+          </div>
+        </div>
+
+        <div class="project-footer">
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">Dart</span>
+          </div>
+          <div class="project-contributions" style="margin-bottom:0">
+            <span class="contrib-tag" data-en="Categories" data-fr="Catégories">Categories</span>
+            <span class="contrib-tag" data-en="Settings" data-fr="Paramètres">Settings</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-logo"></span>
+    <span data-en="© 2026 Daveena" data-fr="© 2026 Daveena">© 2026 Daveena</span>
+    <div class="footer-links">
+      <a href="https://github.com/DaveenaPatel" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/daveena-patel-50628a3a7/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
