@@ -35,20 +35,11 @@ function applyLang(lang) {
     } else {
       el.textContent = text;
     }
-  });
+  }); 
 
   // Update lang buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
-  });
-
-  // Switch CV download file based on language
-  const cvFiles = {
-    en: 'Daveena_CV_EN.pdf',
-    fr: 'Daveena_CV_FR.pdf'
-  };
-  document.querySelectorAll('#cv-nav, #cv-hero').forEach(el => {
-    if (el) el.href = cvFiles[lang];
   });
 
   // Update html lang attribute
