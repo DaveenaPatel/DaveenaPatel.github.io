@@ -335,10 +335,3 @@ footer {
   .skills-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
 }
-
-/* .skills-subheading {
-  font-size: 13px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .08em;
-  color: var(--gray-light); font-family: var(--mono);
-  margin-bottom: 16px; margin-top: 36px;
-} */
